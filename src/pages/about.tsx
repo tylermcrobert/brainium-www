@@ -4,8 +4,7 @@ import Layout from "components/Layout"
 const Index: React.FC = () => {
   return (
     <Layout>
-      <h1>Brainium studios is lorem ipsum dolor</h1>
-      <p>lorem ipsum dolor sit amet consecutor</p>
+      <h1>About</h1>
     </Layout>
   )
 }
