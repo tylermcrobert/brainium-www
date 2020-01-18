@@ -1,52 +1,62 @@
 const TYPESCRIPT_RULES = {
   // handle with typescript
-  "react/prop-types": 0,
+  'react/prop-types': 0,
   // doesn't like .tsx extensions
-  "react/jsx-filename-extension": 0,
+  'react/jsx-filename-extension': 0,
   //
-  "@typescript-eslint/interface-name-prefix": [1, { prefixWithI: "always" }],
+  '@typescript-eslint/interface-name-prefix': [1, { prefixWithI: 'always' }],
 
   // Disable warning abotut function return types.
   // Warns too often for React arrow functions.
-  "@typescript-eslint/explicit-function-return-type": 0,
+  '@typescript-eslint/explicit-function-return-type': 0,
   // Disabling because of bug
-  "@typescript-eslint/no-unused-vars": 0,
-  "no-unused-vars": 0,
+  '@typescript-eslint/no-unused-vars': 0,
+  'no-unused-vars': 0,
+
+  // No commas or semi in interfaces
+  '@typescript-eslint/member-delimiter-style': [
+    1,
+    {
+      multiline: {
+        delimiter: 'none',
+      },
+    },
+  ],
 }
 
 module.exports = {
-  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
-  extends: ["plugin:@typescript-eslint/recommended", "airbnb", "prettier"],
-  plugins: ["@typescript-eslint"],
+  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+  extends: ['plugin:@typescript-eslint/recommended', 'airbnb', 'prettier'],
+  plugins: ['@typescript-eslint'],
   rules: {
     // idk
-    "import/no-cycle": 0,
+    'import/no-cycle': 0,
 
     //needed in certain instances
-    "react/jsx-props-no-spreading": 0,
+    'react/jsx-props-no-spreading': 0,
 
     // Nah
-    "import/prefer-default-export": 0,
+    'import/prefer-default-export': 0,
 
     // This is fucking with prettier
-    "react/jsx-one-expression-per-line": 0,
+    'react/jsx-one-expression-per-line': 0,
 
-    "import/extensions": 0,
+    'import/extensions': 0,
 
     ...TYPESCRIPT_RULES,
   },
 
   settings: {
-    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
 
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"],
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
 
-    "import/resolver": {
+    'import/resolver': {
       node: {
-        paths: ["src"],
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        paths: ['src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },
