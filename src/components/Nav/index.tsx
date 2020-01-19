@@ -3,12 +3,20 @@ import { Link } from 'gatsby'
 
 const navItems: { name: string; path: string }[] = [
   {
+    name: 'Games',
+    path: '/games',
+  },
+  {
     name: 'About',
     path: '/about',
   },
   {
-    name: 'Games',
-    path: '/games',
+    name: 'Careers',
+    path: '/careers',
+  },
+  {
+    name: 'Support',
+    path: '/support',
   },
 ]
 
