@@ -4,36 +4,9 @@ import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Layout from 'components/Layout'
 
-type Frontmatter = {
-  title: string
-  uid: string
-  itunesLink: string
-  googlePlayLink: string
-  appStoreId: number
-}
-type PageContext = {
-  uid: string
-  appStoreId: string
-}
-
-interface IProps {
-  data: {
-    markdownRemark: {
-      frontmatter: Frontmatter
-      html: string
-    }
-    appStoreData: {
-      description: string
-      averageUserRating: number
-      artworkUrl512: string
-    }
-  }
-  pageContext: PageContext
-}
-
 const Game: React.FC<IProps> = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark
-  const { averageUserRating, artworkUrl512 } = data.appStoreData
+  const { averageUserRating, artworkUrl512, screenshotUrls } = data.appStoreData
   const { title, itunesLink, googlePlayLink } = frontmatter
 
   return (
@@ -59,12 +32,16 @@ const Game: React.FC<IProps> = ({ data }) => {
         )}
       </ul>
       <div dangerouslySetInnerHTML={{ __html: html }} />
-      {/* {screenshotUrls.map(url => (
+      {screenshotUrls.map(url => (
         <img src={url} alt="" key={url} width="100px" />
-      ))} */}
+      ))}
     </Layout>
   )
 }
+
+/**
+ * Query
+ */
 
 export const query = graphql`
   query pageData($uid: String!, $appStoreId: Int!) {
@@ -82,8 +59,39 @@ export const query = graphql`
       description
       averageUserRating
       artworkUrl512
+      screenshotUrls
     }
   }
 `
 
+/**
+ * Types
+ */
+
+type Frontmatter = {
+  title: string
+  uid: string
+  itunesLink: string
+  googlePlayLink: string
+  appStoreId: number
+}
+
+type AppStoreData = {
+  description: string
+  averageUserRating: number
+  artworkUrl512: string
+  screenshotUrls: string[]
+}
+
+type MarkdownRemark = {
+  frontmatter: Frontmatter
+  html: string
+}
+
+interface IProps {
+  data: {
+    markdownRemark: MarkdownRemark
+    appStoreData: AppStoreData
+  }
+}
 export default Game
