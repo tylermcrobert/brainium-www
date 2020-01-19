@@ -20,7 +20,7 @@ const Nav = () => {
       </Link>
       <ul>
         {navItems.map(({ name, path }) => (
-          <li>
+          <li key={path}>
             <Link to={path} key={path}>
               {name}
             </Link>
