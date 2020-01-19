@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from 'components/Nav'
 import Footer from 'components/Footer'
 import Helmet from 'react-helmet'
+import GlobalStyle from 'style/GlobalStyle'
 
 interface IProps {
   title: string | null
@@ -12,6 +13,7 @@ const Layout: React.FC<IProps> = ({ children, title }) => {
   return (
     <div>
       <Head title={title} />
+      <GlobalStyle />
       <Nav />
       <hr />
       <main>{children}</main>
