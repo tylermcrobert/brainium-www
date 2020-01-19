@@ -36,7 +36,7 @@ const Game: React.FC<IProps> = ({ data, pageContext }) => {
   } = pageContext.appStoreData
 
   return (
-    <Layout>
+    <Layout title={title}>
       <h1>{title}</h1>
       <div>
         <img src={artworkUrl512} alt={title} width="100px" />

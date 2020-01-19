@@ -1,12 +1,13 @@
-import React from "react"
-import Layout from "components/Layout"
+import React from 'react'
+import Layout from 'components/Layout'
 
-const Index: React.FC = () => {
+const About: React.FC = () => {
   return (
-    <Layout>
+    <Layout title="About">
       <h1>About</h1>
+      <p>Brainium is a company.</p>
     </Layout>
   )
 }
 
-export default Index
+export default About

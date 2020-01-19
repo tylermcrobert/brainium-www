@@ -41,7 +41,7 @@ const Games = () => {
   )
 
   return (
-    <Layout>
+    <Layout title="Games">
       <ul>
         {games.map(({ title, uid }) => (
           <li>
