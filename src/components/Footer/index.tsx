@@ -9,7 +9,7 @@ const Footer = () => {
       &copy; {currentDate} Brainium Studios
       <div>
         {SECTIONS.map(({ name, items }) => (
-          <div>
+          <div key={name}>
             <strong>{name}</strong>
             {items.map(({ name: itemName, url, external }) =>
               !external ? (
