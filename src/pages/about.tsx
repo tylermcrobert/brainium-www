@@ -6,6 +6,7 @@ const About: React.FC = () => {
     <Layout title="About">
       <h1>About</h1>
       <p>Brainium is a company.</p>
+      <h2 id="contact">Contact</h2>
     </Layout>
   )
 }
