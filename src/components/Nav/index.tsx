@@ -1,5 +1,16 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
+
+const navItems: { name: string; path: string }[] = [
+  {
+    name: 'About',
+    path: '/about',
+  },
+  {
+    name: 'Games',
+    path: '/games',
+  },
+]
 
 const Nav = () => {
   return (
@@ -7,7 +18,15 @@ const Nav = () => {
       <Link to="/">
         <strong>Brainium Studios</strong>
       </Link>
-      <Link to="/about">about</Link>
+      <ul>
+        {navItems.map(({ name, path }) => (
+          <li>
+            <Link to={path} key={path}>
+              {name}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </nav>
   )
 }

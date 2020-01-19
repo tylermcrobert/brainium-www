@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import Layout from 'components/Layout'
 
 const GAME_QUERY = graphql`
   {
@@ -40,11 +41,15 @@ const Games = () => {
   )
 
   return (
-    <div>
-      {games.map(({ title, uid }) => (
-        <Link to={`/games/${uid}`}>{title}</Link>
-      ))}
-    </div>
+    <Layout>
+      <ul>
+        {games.map(({ title, uid }) => (
+          <li>
+            <Link to={`/games/${uid}`}>{title}</Link>
+          </li>
+        ))}
+      </ul>
+    </Layout>
   )
 }
 
