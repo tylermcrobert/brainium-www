@@ -17,19 +17,26 @@ interface IProps {
       html: string
     }
   }
-  pageContext: any
+  pageContext: {
+    appStoreData: {
+      screenshotUrls: string[]
+      averageUserRating: number
+    }
+  }
 }
 
-const Game: React.FC<IProps> = ({ data, ...da }) => {
+const Game: React.FC<IProps> = ({ data, pageContext }) => {
   const { frontmatter, html } = data.markdownRemark
-  const { title, itunesLink, googlePlayLink, appStoreId } = frontmatter
-
-  console.log(da.pageContext)
+  const { title, itunesLink, googlePlayLink } = frontmatter
+  const { averageUserRating, screenshotUrls } = pageContext.appStoreData
 
   return (
     <Layout>
       <h1>{title}</h1>
-      {/* {appStoreData && <img src={appStoreData.icon_url} alt="icon" />} */}
+      {screenshotUrls.map(url => (
+        <img src={url} alt="" key={url} width="100px" />
+      ))}
+      <div>Average rating: {averageUserRating}</div>
       <ul>
         <li>
           <a href={itunesLink} target="_blank" rel="noopener noreferrer">
