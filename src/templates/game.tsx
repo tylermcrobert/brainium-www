@@ -21,6 +21,7 @@ interface IProps {
     appStoreData: {
       screenshotUrls: string[]
       averageUserRating: number
+      artworkUrl512: string
     }
   }
 }
@@ -28,14 +29,19 @@ interface IProps {
 const Game: React.FC<IProps> = ({ data, pageContext }) => {
   const { frontmatter, html } = data.markdownRemark
   const { title, itunesLink, googlePlayLink } = frontmatter
-  const { averageUserRating, screenshotUrls } = pageContext.appStoreData
+  const {
+    averageUserRating,
+    screenshotUrls,
+    artworkUrl512,
+  } = pageContext.appStoreData
 
   return (
     <Layout>
       <h1>{title}</h1>
-      {screenshotUrls.map(url => (
-        <img src={url} alt="" key={url} width="100px" />
-      ))}
+      <div>
+        <img src={artworkUrl512} alt={title} width="100px" />
+      </div>
+
       <div>Average rating: {averageUserRating}</div>
       <ul>
         <li>
@@ -52,6 +58,9 @@ const Game: React.FC<IProps> = ({ data, pageContext }) => {
         )}
       </ul>
       <div dangerouslySetInnerHTML={{ __html: html }} />
+      {screenshotUrls.map(url => (
+        <img src={url} alt="" key={url} width="100px" />
+      ))}
     </Layout>
   )
 }
