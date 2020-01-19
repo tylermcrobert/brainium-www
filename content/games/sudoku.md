@@ -2,6 +2,7 @@
 title: Soduku
 uid: sudoku
 itunesLink: https://itunes.apple.com/us/app/sudoku/id418044512?mt=8
+appStoreId: 418044512
 googlePlayLink: https://play.google.com/store/apps/details?id=com.brainium.sudoku.free
 ---
 

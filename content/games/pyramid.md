@@ -2,6 +2,7 @@
 title: Pyramid
 uid: pyramid
 itunesLink: https://apps.apple.com/us/app/pyramid/id1449046808
+appStoreId: 1449046808
 googlePlayLink: ''
 ---
 

@@ -2,6 +2,7 @@
 title: ilu
 uid: ilu
 itunesLink: https://itunes.apple.com/app/ilu/id1271512200?mt=8
+appStoreId: 1271512200
 googlePlayLink: ''
 ---
 

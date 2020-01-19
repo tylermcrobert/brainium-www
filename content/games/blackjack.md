@@ -2,6 +2,7 @@
 title: Blackjack
 uid: blackjack
 itunesLink: https://itunes.apple.com/us/app/blackjack/id703099994?mt=8
+appStoreId: 703099994
 googlePlayLink: https://play.google.com/store/apps/details?id=com.brainium.blackjack
 ---
 

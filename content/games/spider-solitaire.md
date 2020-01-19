@@ -2,6 +2,7 @@
 title: Spider Solitaire
 uid: spider-solitaire
 itunesLink: https://apps.apple.com/us/app/spider-solitaire/id487025819
+appStoreId: 487025819
 googlePlayLink: https://play.google.com/store/apps/details?id=com.brainium.spiderfree&hl=en
 ---
 

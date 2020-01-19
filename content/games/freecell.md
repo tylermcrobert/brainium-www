@@ -2,6 +2,7 @@
 title: Freecell
 uid: freecell
 itunesLink: https://itunes.apple.com/us/app/freecell/id504368649?mt=8
+appStoreId: 504368649
 googlePlayLink: https://play.google.com/store/apps/details?id=com.brainium.freecellfree&hl=en
 ---
 

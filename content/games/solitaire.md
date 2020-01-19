@@ -2,6 +2,7 @@
 title: Solitaire
 uid: solitaire
 itunesLink: https://apps.apple.com/us/app/solitaire/id479280326
+appStoreId: 479280326
 googlePlayLink: https://play.google.com/store/apps/details?id=com.brainium.solitairefree&hl=en
 ---
 

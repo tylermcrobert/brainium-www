@@ -2,6 +2,7 @@
 title: Jumbline 2
 uid: jumbline
 itunesLink: https://itunes.apple.com/us/app/jumbline-2-free/id384200512?mt=8
+appStoreId: 384200512
 googlePlayLink: https://play.google.com/store/apps/details?id=com.brainium.jumbline2free&hl=en
 ---
 

@@ -2,6 +2,7 @@
 title: Word Search Star
 uid: word-search
 itunesLink: https://itunes.apple.com/us/app/word-search/id400793434?mt=8
+appStoreId: 400793434
 googlePlayLink: ''
 ---
 
