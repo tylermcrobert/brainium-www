@@ -42,10 +42,13 @@ const Games = () => {
 
   return (
     <Layout title="Games">
+      <h1>Games</h1>
       <ul>
         {games.map(({ title, uid }) => (
           <li>
-            <Link to={`/games/${uid}`}>{title}</Link>
+            <h2>
+              <Link to={`/games/${uid}`}>{title}</Link>
+            </h2>
           </li>
         ))}
       </ul>
