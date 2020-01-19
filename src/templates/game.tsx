@@ -1,5 +1,6 @@
+/* eslint-disable camelcase */
 /* eslint-disable react/no-danger */
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Layout from 'components/Layout'
 
@@ -11,30 +12,37 @@ interface IProps {
         uid: string
         itunesLink: string
         googlePlayLink: string
+        appStoreId: number
       }
       html: string
     }
   }
+  pageContext: any
 }
 
-const Game: React.FC<IProps> = ({ data }) => {
+const Game: React.FC<IProps> = ({ data, ...da }) => {
   const { frontmatter, html } = data.markdownRemark
-  const { title, itunesLink, googlePlayLink } = frontmatter
+  const { title, itunesLink, googlePlayLink, appStoreId } = frontmatter
+
+  console.log(da.pageContext)
 
   return (
     <Layout>
       <h1>{title}</h1>
+      {/* {appStoreData && <img src={appStoreData.icon_url} alt="icon" />} */}
       <ul>
         <li>
           <a href={itunesLink} target="_blank" rel="noopener noreferrer">
             iOS App Store
-          </a>{' '}
-        </li>
-        <li>
-          <a href={googlePlayLink} target="_blank" rel="noopener noreferrer">
-            Google Play
           </a>
         </li>
+        {googlePlayLink && (
+          <li>
+            <a href={googlePlayLink} target="_blank" rel="noopener noreferrer">
+              Google Play
+            </a>
+          </li>
+        )}
       </ul>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
@@ -49,6 +57,7 @@ export const query = graphql`
         uid
         itunesLink
         googlePlayLink
+        appStoreId
       }
       html
     }

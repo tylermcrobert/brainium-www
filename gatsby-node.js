@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable consistent-return */
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+
+const fetch = require(`node-fetch`)
 const path = require('path')
+require('dotenv')
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -10,44 +13,36 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   })
 }
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
-
-  return graphql(`
-    {
+exports.createPages = async function createPages({
+  actions: { createPage },
+  graphql,
+}) {
+  const data = await graphql(`
+    query {
       allFile(filter: { relativeDirectory: { eq: "games" } }) {
         edges {
           node {
             childMarkdownRemark {
               frontmatter {
-                title
                 uid
-                itunesLink
-                googlePlayLink
+                appStoreId
               }
-              html
             }
           }
         }
       }
     }
-  `).then(({ data, errors }) => {
-    if (errors) {
-      console.log(errors)
+  `).then(result => result.data)
 
-      return Promise.reject(errors)
-    }
+  data.allFile.edges.forEach(({ node }) => {
+    const { uid, appStoreId } = node.childMarkdownRemark.frontmatter
 
-    data.allFile.edges.forEach(({ node }) => {
-      const { uid } = node.childMarkdownRemark.frontmatter
-
-      createPage({
-        path: `/games/${uid}/`,
-        component: path.resolve('src/templates/game.tsx'),
-        context: {
-          uid,
-        },
-      })
+    createPage({
+      path: `/games/${uid}/`,
+      component: path.resolve('src/templates/game.tsx'),
+      context: {
+        uid,
+      },
     })
   })
 }
