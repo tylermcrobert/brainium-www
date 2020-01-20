@@ -3,6 +3,8 @@ import Nav from 'components/Nav'
 import Footer from 'components/Footer'
 import Helmet from 'react-helmet'
 import GlobalStyle from 'style/GlobalStyle'
+import theme from 'style/theme'
+import { ThemeProvider } from 'styled-components'
 
 interface IProps {
   title: string | null
@@ -11,15 +13,17 @@ interface IProps {
 
 const Layout: React.FC<IProps> = ({ children, title }) => {
   return (
-    <div>
-      <Head title={title} />
-      <GlobalStyle />
-      <Nav />
-      <hr />
-      <main>{children}</main>
-      <hr />
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Head title={title} />
+        <GlobalStyle />
+        <Nav />
+        <hr />
+        <main>{children}</main>
+        <hr />
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
 

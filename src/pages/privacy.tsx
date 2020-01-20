@@ -18,7 +18,12 @@ const Privacy: React.FC = () => {
 
   return (
     <Layout title="Privacy">
-      <div dangerouslySetInnerHTML={{ __html: pageContent }} />
+      <div className="container">
+        <div className="styled">
+          <h1>Privacy Policy</h1>
+          <div dangerouslySetInnerHTML={{ __html: pageContent }} />
+        </div>
+      </div>
     </Layout>
   )
 }
