@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from 'components/Layout'
 import { useStaticQuery, graphql } from 'gatsby'
+import { Wrap, Section } from 'components/UI'
 
 const PRIVACY_MARKDOWN = graphql`
   {
@@ -18,12 +19,16 @@ const Privacy: React.FC = () => {
 
   return (
     <Layout title="Privacy">
-      <div className="container">
-        <div className="styled">
-          <h1>Privacy Policy</h1>
-          <div dangerouslySetInnerHTML={{ __html: pageContent }} />
-        </div>
-      </div>
+      <Wrap>
+        <Section>
+          <div className="container">
+            <div className="styled">
+              <h1>Privacy Policy</h1>
+              <div dangerouslySetInnerHTML={{ __html: pageContent }} />
+            </div>
+          </div>
+        </Section>
+      </Wrap>
     </Layout>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { Wrap } from 'components/UI'
 
 const navItems: { name: string; path: string }[] = [
   {
@@ -23,18 +24,20 @@ const navItems: { name: string; path: string }[] = [
 const Nav = () => {
   return (
     <nav>
-      <Link to="/">
-        <strong>Brainium Studios</strong>
-      </Link>
-      <ul>
-        {navItems.map(({ name, path }) => (
-          <li key={path}>
-            <Link to={path} key={path}>
-              {name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Wrap>
+        <Link to="/">
+          <strong>Brainium Studios</strong>
+        </Link>
+        <ul>
+          {navItems.map(({ name, path }) => (
+            <li key={path}>
+              <Link to={path} key={path}>
+                {name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Wrap>
     </nav>
   )
 }

@@ -1,8 +1,9 @@
 /* eslint-disable camelcase */
 /* eslint-disable react/no-danger */
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from 'components/Layout'
+import { Section, Wrap, TextWrap } from 'components/UI'
 
 const Game: React.FC<IProps> = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark
@@ -11,30 +12,45 @@ const Game: React.FC<IProps> = ({ data }) => {
 
   return (
     <Layout title={title}>
-      <h1>{title}</h1>
-      <div>
-        <img src={artworkUrl512} alt={title} width="100px" />
-      </div>
-
-      <div>Average rating: {averageUserRating}</div>
-      <ul>
-        <li>
-          <a href={itunesLink} target="_blank" rel="noopener noreferrer">
-            iOS App Store
-          </a>
-        </li>
-        {googlePlayLink && (
-          <li>
-            <a href={googlePlayLink} target="_blank" rel="noopener noreferrer">
-              Google Play
-            </a>
-          </li>
-        )}
-      </ul>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-      {screenshotUrls.map(url => (
-        <img src={url} alt="" key={url} width="100px" />
-      ))}
+      <Wrap>
+        <Section>
+          <h1>{title}</h1>
+          <div>
+            <img src={artworkUrl512} alt={title} width="100px" />
+          </div>
+        </Section>
+        <Section>
+          <div>Average rating: {averageUserRating}</div>
+          <ul>
+            <li>
+              <a href={itunesLink} target="_blank" rel="noopener noreferrer">
+                iOS App Store
+              </a>
+            </li>
+            {googlePlayLink && (
+              <li>
+                <a
+                  href={googlePlayLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google Play
+                </a>
+              </li>
+            )}
+          </ul>
+        </Section>
+        <Section>
+          <TextWrap>
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </TextWrap>
+        </Section>
+        <Section>
+          {screenshotUrls.map(url => (
+            <img src={url} alt="" key={url} width="100px" />
+          ))}
+        </Section>
+      </Wrap>
     </Layout>
   )
 }
