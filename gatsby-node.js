@@ -3,7 +3,9 @@
 
 const fetch = require(`node-fetch`)
 const path = require('path')
-require('dotenv')
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -45,6 +47,28 @@ exports.createPages = async function createPages({
         },
       })
     }
+  })
+}
+
+exports.sourceNodes = async ({
+  actions: { createNode },
+  createContentDigest,
+}) => {
+  const jobsData = await fetch(
+    `https://api.resumatorapi.com/v1/jobs?apikey=${process.env.JAZZHR_API_KEY}`
+  ).then(res => res.json())
+
+  jobsData.forEach(jobData => {
+    createNode({
+      ...jobData,
+      id: jobData.id,
+      parent: null,
+      children: [],
+      internal: {
+        type: `JazzHRJob`,
+        contentDigest: createContentDigest(jobData),
+      },
+    })
   })
 }
 
