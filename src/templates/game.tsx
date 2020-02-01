@@ -3,6 +3,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Layout, AppFrame, Section, Wrap, TextWrap } from 'components'
+import styled from 'styled-components'
 
 const Game: React.FC<IProps> = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark
@@ -44,17 +45,56 @@ const Game: React.FC<IProps> = ({ data }) => {
             <div dangerouslySetInnerHTML={{ __html: html }} />
           </TextWrap>
         </Section>
-        <Section>
-          {screenshotUrls.map(url => (
-            <AppFrame key={url}>
-              <img src={url} alt="" />
-            </AppFrame>
-          ))}
-        </Section>
       </Wrap>
+      <Screenshots urls={screenshotUrls} />
     </Layout>
   )
 }
+
+/**
+ *
+ * Screenshots
+ *
+ */
+
+interface IScreenshotProps {
+  urls: string[]
+}
+
+const Screenshots: React.FC<IScreenshotProps> = ({ urls }) => {
+  return (
+    <ScreenshotWrapper>
+      <Wrap>
+        <ScreenGrid length={urls.length}>
+          {urls.map(url => (
+            <div>
+              <AppFrame key={url}>
+                <img src={url} alt="" />
+              </AppFrame>
+            </div>
+          ))}
+        </ScreenGrid>
+      </Wrap>
+    </ScreenshotWrapper>
+  )
+}
+
+const ScreenshotWrapper = styled.div`
+  padding: 8rem 0;
+  overflow-x: scroll;
+  background: black;
+`
+
+const ScreenGrid = styled.div<{ length: number }>`
+  display: grid;
+  grid-template-columns: repeat(${props => props.length}, 35%);
+  grid-gap: 5%;
+  margin: 0 5%;
+
+  > * {
+    min-height: 0;
+  }
+`
 
 /**
  * Query

@@ -26,6 +26,7 @@ const FrameMask = styled.div`
 
   img {
     display: block;
+    width: 100%;
   }
 `
 
