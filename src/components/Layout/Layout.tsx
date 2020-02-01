@@ -18,9 +18,7 @@ const Layout: React.FC<IProps> = ({ children, title }) => {
         <Head title={title} />
         <GlobalStyle />
         <Nav />
-        <hr />
         <Styled.Main>{children}</Styled.Main>
-        <hr />
         <Footer />
       </div>
     </ThemeProvider>

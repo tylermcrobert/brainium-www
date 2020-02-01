@@ -20,14 +20,16 @@ const About: React.FC = () => {
 const Intro: React.FC = () => (
   <>
     <Section>
-      <TextWrap center>
-        <h5>About</h5>
-        <h1>deterruisset usu vis scripserit</h1>
-        <p>
-          Ponderum melius sale et iuvaret et usu simul nusquam inani ex eum cibo
-          veritus audiam pro.
-        </p>
-      </TextWrap>
+      <Wrap>
+        <TextWrap center>
+          <h5>About</h5>
+          <h1>deterruisset usu vis scripserit</h1>
+          <p>
+            Ponderum melius sale et iuvaret et usu simul nusquam inani ex eum
+            cibo veritus audiam pro.
+          </p>
+        </TextWrap>
+      </Wrap>
     </Section>
     <Section>
       <img src="https://via.placeholder.com/1440x800" alt="" width="100%" />
@@ -48,16 +50,18 @@ const STATS: { head: string; body: string }[] = [
 const Impact: React.FC = () => (
   <div>
     <Section>
-      <TextWrap center>
-        <h5>Brainium’s Impact</h5>
-        <h2>Copy that sets up Brainium’s success in the market</h2>
-        <p>
-          Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
-          Fusce lacinia est est, eget eleifend sem venenatis eu. Curabitur quis
-          quam nulla. Aenean ullamcorper odio sit amet ipsum aliquet facilisis.
-          Sed in sapien in ex pharetra tempus. Nulla scelerisque
-        </p>
-      </TextWrap>
+      <Wrap>
+        <TextWrap center>
+          <h5>Brainium’s Impact</h5>
+          <h2>Copy that sets up Brainium’s success in the market</h2>
+          <p>
+            Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
+            Fusce lacinia est est, eget eleifend sem venenatis eu. Curabitur
+            quis quam nulla. Aenean ullamcorper odio sit amet ipsum aliquet
+            facilisis. Sed in sapien in ex pharetra tempus. Nulla scelerisque
+          </p>
+        </TextWrap>
+      </Wrap>
     </Section>
     <Section>
       <Wrap>
@@ -82,15 +86,17 @@ const Career: React.FC = () => (
   <div>
     <img src="https://via.placeholder.com/960x720" width="100%" alt="" />
     <Section>
-      <TextWrap center>
-        <h5>Working Here</h5>
-        <h2>Copy that inspires new talent to work at Brainium</h2>
-        <p>
-          Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
-          Fusce lacinia est est, eget eleifend sem venenatis eu.
-        </p>
-        <Link to="/careers">Careers</Link>
-      </TextWrap>
+      <Wrap>
+        <TextWrap center>
+          <h5>Working Here</h5>
+          <h2>Copy that inspires new talent to work at Brainium</h2>
+          <p>
+            Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
+            Fusce lacinia est est, eget eleifend sem venenatis eu.
+          </p>
+          <Link to="/careers">Careers</Link>
+        </TextWrap>
+      </Wrap>
     </Section>
   </div>
 )

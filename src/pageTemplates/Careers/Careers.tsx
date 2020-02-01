@@ -21,18 +21,20 @@ const Careers = () => {
 const Intro: React.FC = () => (
   <>
     <Section>
-      <TextWrap center>
-        <h5>Careers</h5>
-        <h1>
-          Inspiring copy about <br />
-          working at brainium
-        </h1>
-        <p>
-          Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
-          Fusce lacinia est est, eget eleifend sem venenatis eu. Curabitur quis
-          quam nulla.
-        </p>
-      </TextWrap>
+      <Wrap>
+        <TextWrap center>
+          <h5>Careers</h5>
+          <h1>
+            Inspiring copy about <br />
+            working at brainium
+          </h1>
+          <p>
+            Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
+            Fusce lacinia est est, eget eleifend sem venenatis eu. Curabitur
+            quis quam nulla.
+          </p>
+        </TextWrap>
+      </Wrap>
     </Section>
     <Section>
       <img src="https://via.placeholder.com/1440x800" alt="" width="100%" />
@@ -70,14 +72,16 @@ const ValueProps = () => {
   return (
     <>
       <Section>
-        <TextWrap center>
-          <h5>Benefits</h5>
-          <h2>Why Work at Branium?</h2>
-          <p>
-            Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
-            Fusce lacinia est est, eget eleifend sem venenatis eu.
-          </p>
-        </TextWrap>
+        <Wrap>
+          <TextWrap center>
+            <h5>Benefits</h5>
+            <h2>Why Work at Branium?</h2>
+            <p>
+              Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
+              Fusce lacinia est est, eget eleifend sem venenatis eu.
+            </p>
+          </TextWrap>
+        </Wrap>
       </Section>
       <Section>
         <Wrap>

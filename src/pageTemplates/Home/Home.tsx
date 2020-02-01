@@ -119,12 +119,14 @@ const Careers: React.FC = () => {
   return (
     <>
       <Section>
-        <TextWrap center>
-          <h2>We&apos;re Hiring</h2>
-          <p>
-            Sed tortor purus, venenatis vitae euismod eu, placerat sed lacus.
-          </p>
-        </TextWrap>
+        <Wrap>
+          <TextWrap center>
+            <h2>We&apos;re Hiring</h2>
+            <p>
+              Sed tortor purus, venenatis vitae euismod eu, placerat sed lacus.
+            </p>
+          </TextWrap>
+        </Wrap>
       </Section>
       <Section>
         <WIREFRAME.Featured invert>
