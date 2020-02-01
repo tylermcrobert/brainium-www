@@ -29,6 +29,7 @@ type Data = {
         description: string
         type: string
         board_code: string
+        url: string
       }
     }[]
   }
@@ -36,7 +37,10 @@ type Data = {
 
 const useCareers = () => {
   const queryRes: Data = useStaticQuery(query)
-  return queryRes.allJazzHrJob.edges.map(edge => edge.node)
+  return queryRes.allJazzHrJob.edges.map(({ node }) => ({
+    ...node,
+    url: `https://brainiumstudios.applytojob.com/apply/${node.board_code}`,
+  }))
 }
 
 export default useCareers

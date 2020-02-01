@@ -1,11 +1,11 @@
 import { createGlobalStyle, css } from 'styled-components'
 import reset from 'styled-reset'
-import { log } from 'util'
 
 const GLOBAL = css`
   * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
   }
 
   html,

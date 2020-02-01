@@ -23,13 +23,9 @@ const List = () => {
 
   return (
     <>
-      {careerData.map(({ city, title, board_code: code, state }) => (
+      {careerData.map(({ city, title, url, state }) => (
         <>
-          <a
-            href={`https://brainiumstudios.applytojob.com/apply/${code}`}
-            target="blank"
-            rel="noopener noreferrer"
-          >
+          <a href={url} target="blank" rel="noopener noreferrer">
             <div>
               <strong>{title}</strong>
             </div>
