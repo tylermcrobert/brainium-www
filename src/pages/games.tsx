@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Layout from 'components/Layout'
-import { Wrap, Section, TextWrap } from 'components/UI'
+import { Wrap, Section } from 'components/UI'
 
 const GAME_QUERY = graphql`
   {

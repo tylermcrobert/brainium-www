@@ -11,7 +11,7 @@ const TYPESCRIPT_RULES = {
   '@typescript-eslint/explicit-function-return-type': 0,
   // Disabling because of bug
   '@typescript-eslint/no-unused-vars': 0,
-  'no-unused-vars': 0,
+  // 'no-unused-vars': 0,
 
   // No commas or semi in interfaces
   '@typescript-eslint/member-delimiter-style': [
@@ -37,6 +37,9 @@ module.exports = {
 
     // Nah
     'import/prefer-default-export': 0,
+
+    // for api data
+    camelcase: 0,
 
     // This is fucking with prettier
     'react/jsx-one-expression-per-line': 0,
