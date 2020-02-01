@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, Wrap, Section } from 'components'
+import { Layout, Wrap, Section, TextWrap } from 'components'
 import useCareers from 'hooks/useCareers'
 import useGames from 'hooks/useGames'
 import { Link } from 'gatsby'
@@ -45,25 +45,29 @@ const Featured: React.FC = () => {
   return (
     <>
       <WIREFRAME.Featured>
-        <img src="https://via.placeholder.com/960x680" width="100%" alt="" />
-        <div>
-          <h5>Featured games</h5>
-          <h2>{title}</h2>
-          {index + 1} / {length}
-          <p>{summary}</p>
+        <WIREFRAME.FeaturedImg>
+          <img src="https://via.placeholder.com/960x680" width="100%" alt="" />
+        </WIREFRAME.FeaturedImg>
+        <WIREFRAME.FeaturedText>
           <div>
-            <Link to={`/games/${uid}`}>Learn More</Link>{' '}
-            <Link to="/games/">All Games</Link>
+            <h5>Featured games</h5>
+            <h2>{title}</h2>
+            {index + 1} / {length}
+            <p>{summary}</p>
+            <div>
+              <Link to={`/games/${uid}`}>Learn More</Link>{' '}
+              <Link to="/games/">All Games</Link>
+            </div>
+            <div>
+              <button type="button" onClick={() => setIndex(prevIndex)}>
+                Prev
+              </button>
+              <button type="button" onClick={() => setIndex(nextIndex)}>
+                Next
+              </button>
+            </div>
           </div>
-          <div>
-            <button type="button" onClick={() => setIndex(prevIndex)}>
-              Prev
-            </button>
-            <button type="button" onClick={() => setIndex(nextIndex)}>
-              Next
-            </button>
-          </div>
-        </div>
+        </WIREFRAME.FeaturedText>
       </WIREFRAME.Featured>
     </>
   )
@@ -76,25 +80,32 @@ const Featured: React.FC = () => {
 const Careers: React.FC = () => {
   const careerData = useCareers()
   return (
-    <Section>
-      <WIREFRAME.Featured invert>
-        <img src="https://via.placeholder.com/960x680" width="100%" alt="" />
-        <div>
+    <>
+      <Section>
+        <TextWrap center>
           <h2>We&apos;re Hiring</h2>
           <p>
             Sed tortor purus, venenatis vitae euismod eu, placerat sed lacus.
           </p>
-          {careerData.map(({ title, city, url }) => (
-            <a href={url} target="_blank" rel="noopener noreferrer">
-              <div>
-                {title} - {city}
-              </div>
-            </a>
-          ))}
-          <Link to="/careers">See all careers</Link>
-        </div>
-      </WIREFRAME.Featured>
-    </Section>
+        </TextWrap>
+      </Section>
+      <Section>
+        <WIREFRAME.Featured invert>
+          <img src="https://via.placeholder.com/960x680" width="100%" alt="" />
+          <div>
+            {careerData.map(({ title, city, url }) => (
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                <WIREFRAME.JobEntry>
+                  <div>{title}</div>
+                  <div>{city}</div>
+                </WIREFRAME.JobEntry>
+              </a>
+            ))}
+          </div>
+        </WIREFRAME.Featured>
+        <Link to="/careers">See all careers</Link>
+      </Section>
+    </>
   )
 }
 
