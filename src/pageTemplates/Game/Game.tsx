@@ -1,8 +1,8 @@
 import React from 'react'
 import { Layout, AppFrame, Section, Wrap, TextWrap } from 'components'
-import styled from 'styled-components'
 // eslint-disable-next-line no-unused-vars
 import { IProps } from 'templates/game'
+import WIREFRAME from './Wireframe'
 
 const Game: React.FC<IProps> = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark
@@ -52,6 +52,12 @@ const Game: React.FC<IProps> = ({ data }) => {
 
 /**
  *
+ * Meta
+ *
+ */
+
+/**
+ *
  * Screenshots
  *
  */
@@ -62,9 +68,9 @@ interface IScreenshotProps {
 
 const Screenshots: React.FC<IScreenshotProps> = ({ urls }) => {
   return (
-    <ScreenshotWrapper>
+    <WIREFRAME.ScreenshotWrapper>
       <Wrap>
-        <ScreenGrid length={urls.length}>
+        <WIREFRAME.ScreenGrid length={urls.length}>
           {urls.map(url => (
             <div>
               <AppFrame key={url}>
@@ -72,27 +78,10 @@ const Screenshots: React.FC<IScreenshotProps> = ({ urls }) => {
               </AppFrame>
             </div>
           ))}
-        </ScreenGrid>
+        </WIREFRAME.ScreenGrid>
       </Wrap>
-    </ScreenshotWrapper>
+    </WIREFRAME.ScreenshotWrapper>
   )
 }
-
-const ScreenshotWrapper = styled.div`
-  padding: 8rem 0;
-  overflow-x: scroll;
-  background: black;
-`
-
-const ScreenGrid = styled.div<{ length: number }>`
-  display: grid;
-  grid-template-columns: repeat(${props => props.length}, 35%);
-  grid-gap: 5%;
-  margin: 0 5%;
-
-  > * {
-    min-height: 0;
-  }
-`
 
 export default Game

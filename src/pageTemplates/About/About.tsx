@@ -1,6 +1,7 @@
 import React from 'react'
 import { Layout, TextWrap, Wrap, Section } from 'components'
 import { Link } from 'gatsby'
+import WIREFRAME from './Wireframe'
 
 const About: React.FC = () => {
   return (
@@ -59,12 +60,14 @@ const Impact: React.FC = () => (
     </Section>
     <Section>
       <Wrap>
-        {STATS.map(({ head, body }) => (
-          <div>
-            <h1>{head}</h1>
-            <p>{body}</p>
-          </div>
-        ))}
+        <WIREFRAME.Stats>
+          {STATS.map(({ head, body }) => (
+            <div>
+              <h1>{head}</h1>
+              <p>{body}</p>
+            </div>
+          ))}
+        </WIREFRAME.Stats>
       </Wrap>
     </Section>
   </div>
