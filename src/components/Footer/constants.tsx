@@ -32,7 +32,7 @@ export const SECTIONS: List = [
       },
       {
         name: 'Careers',
-        url: '/contact/',
+        url: '/careers/',
       },
     ],
   },

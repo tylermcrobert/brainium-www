@@ -1,29 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { Layout, Wrap, Section } from 'components'
-import useGames from 'hooks/useGames'
+import { GamesTemplate } from 'pageTemplates'
 
-const Games = () => {
-  const games = useGames()
-
-  return (
-    <Layout title="Games">
-      <Wrap>
-        <Section>
-          <h1>Games</h1>
-          <ul>
-            {games.map(({ title, uid }) => (
-              <li>
-                <h2>
-                  <Link to={`/games/${uid}`}>{title}</Link>
-                </h2>
-              </li>
-            ))}
-          </ul>
-        </Section>
-      </Wrap>
-    </Layout>
-  )
+const Games: React.FC = () => {
+  return <GamesTemplate />
 }
 
 export default Games
