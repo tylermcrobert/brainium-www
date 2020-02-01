@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import Layout from 'components/Layout'
-import { Wrap, Section } from 'components/UI'
+import { Layout, Wrap, Section } from 'components'
 import useCareers from 'hooks/useCareers'
 import useGames from 'hooks/useGames'
 import { Link } from 'gatsby'

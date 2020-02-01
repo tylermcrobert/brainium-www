@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Section, Wrap } from 'components/UI'
+import { Section, Wrap } from 'components'
 import { SECTIONS } from './constants'
 
 const Footer = () => {

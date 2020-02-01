@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from 'components/Layout'
+import { Layout, Wrap, Section } from 'components'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Wrap, Section } from 'components/UI'
+
 
 const PRIVACY_MARKDOWN = graphql`
   {

@@ -1,10 +1,9 @@
 import React from 'react'
-import Nav from 'components/Nav'
-import Footer from 'components/Footer'
 import Helmet from 'react-helmet'
 import GlobalStyle from 'style/GlobalStyle'
 import theme from 'style/theme'
 import { ThemeProvider } from 'styled-components'
+import { Nav, Footer } from 'components'
 import Styled from './Styled'
 
 interface IProps {

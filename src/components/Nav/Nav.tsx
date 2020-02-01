@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Wrap } from 'components/UI'
+import { Wrap } from 'components'
 
 const navItems: { name: string; path: string }[] = [
   {

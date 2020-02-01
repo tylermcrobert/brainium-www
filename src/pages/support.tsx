@@ -1,6 +1,5 @@
 import React from 'react'
-import Layout from 'components/Layout'
-import { Wrap, Section } from 'components/UI'
+import { Wrap, Section, Layout } from 'components'
 
 const Careers = () => {
   return (

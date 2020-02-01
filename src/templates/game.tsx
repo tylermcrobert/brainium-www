@@ -2,8 +2,7 @@
 /* eslint-disable react/no-danger */
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Layout, AppFrame } from 'components'
-import { Section, Wrap, TextWrap } from 'components/UI'
+import { Layout, AppFrame, Section, Wrap, TextWrap } from 'components'
 
 const Game: React.FC<IProps> = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark

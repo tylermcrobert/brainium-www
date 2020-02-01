@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from 'components/Layout'
-import { Wrap, Section } from 'components/UI'
+import { Layout, Wrap, Section } from 'components'
 import useGames from 'hooks/useGames'
 
 const Games = () => {
