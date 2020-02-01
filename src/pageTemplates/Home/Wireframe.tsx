@@ -1,20 +1,37 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const BREAK_LG = '(min-width: 40rem)'
 const COL_WIDTH = '55rem'
+const TEXT_WIDTH = '20rem'
+
+const cols = (invert: boolean) => {
+  return invert
+    ? css`
+        grid-template-columns:
+          minmax(0, 1fr)
+          /* image */
+          minmax(0, calc(${COL_WIDTH} - ${TEXT_WIDTH}))
+          /* text */
+          minmax(0, calc(${COL_WIDTH} - (${COL_WIDTH} - ${TEXT_WIDTH})))
+          minmax(0, 1fr);
+      `
+    : css`
+        grid-template-columns:
+          minmax(0, 1fr)
+          /* image */
+          minmax(0, calc(${COL_WIDTH} - (${COL_WIDTH} - ${TEXT_WIDTH})))
+          /* text */
+          minmax(0, calc(${COL_WIDTH} - ${TEXT_WIDTH}))
+          minmax(0, 1fr);
+      `
+}
 
 const Featured = styled.div<{ invert?: boolean }>`
   @media ${BREAK_LG} {
     border: 1px solid blue;
     display: grid;
     grid-template-columns: auto minmax(auto, 1200px) auto;
-    grid-template-columns:
-      minmax(0, 1fr)
-      /* image */
-      minmax(0, calc(${COL_WIDTH} * ${props => (props.invert ? 2 : 1) / 3}))
-      /* text */
-      minmax(0, calc(${COL_WIDTH} * ${props => (props.invert ? 1 : 2) / 3}))
-      minmax(0, 1fr);
+    ${props => cols(!!props.invert)}
     align-items: center;
 
     > * {
