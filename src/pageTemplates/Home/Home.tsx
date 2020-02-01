@@ -9,17 +9,47 @@ const Index: React.FC = () => {
   return (
     <Layout title={null}>
       <Intro />
+      <Setup />
       <Featured />
       <Careers />
     </Layout>
   )
 }
+
+/**
+ * Intro
+ */
+
 const Intro: React.FC = () => {
+  return (
+    <>
+      <Section>
+        <Wrap>
+          <h1>Brainium studios is lorem ipsum dolor</h1>
+          <p>lorem ipsum dolor sit amet consecutor</p>
+        </Wrap>
+      </Section>
+      <img src="https://via.placeholder.com/1440x800" alt="" width="100%" />
+    </>
+  )
+}
+
+/**
+ * Setup
+ */
+
+const Setup: React.FC = () => {
   return (
     <Section>
       <Wrap>
-        <h1>Brainium studios is lorem ipsum dolor</h1>
-        <p>lorem ipsum dolor sit amet consecutor</p>
+        <TextWrap>
+          <h2>We love making games because we love playing games.</h2>
+          <p>
+            Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
+            Fusce lacinia est est, eget eleifend sem venenatis eu. learn more
+            about why we make games
+          </p>
+        </TextWrap>
       </Wrap>
     </Section>
   )

@@ -21,6 +21,7 @@ const Intro: React.FC = () => (
   <>
     <Section>
       <TextWrap center>
+        <h5>About</h5>
         <h1>deterruisset usu vis scripserit</h1>
         <p>
           Ponderum melius sale et iuvaret et usu simul nusquam inani ex eum cibo
