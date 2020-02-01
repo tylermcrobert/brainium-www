@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, Wrap, Section, TextWrap } from 'components'
+import { Layout, Wrap, Section, TextWrap, Button } from 'components'
 import useCareers from 'hooks/useCareers'
 import useGames from 'hooks/useGames'
 import { Link } from 'gatsby'
@@ -47,6 +47,14 @@ const Featured: React.FC = () => {
       <WIREFRAME.Featured>
         <WIREFRAME.FeaturedImg>
           <img src="https://via.placeholder.com/960x680" width="100%" alt="" />
+          <div>
+            <button type="button" onClick={() => setIndex(prevIndex)}>
+              Prev
+            </button>
+            <button type="button" onClick={() => setIndex(nextIndex)}>
+              Next
+            </button>
+          </div>
         </WIREFRAME.FeaturedImg>
         <WIREFRAME.FeaturedText>
           <div>
@@ -55,16 +63,15 @@ const Featured: React.FC = () => {
             {index + 1} / {length}
             <p>{summary}</p>
             <div>
-              <Link to={`/games/${uid}`}>Learn More</Link>{' '}
-              <Link to="/games/">All Games</Link>
-            </div>
-            <div>
-              <button type="button" onClick={() => setIndex(prevIndex)}>
-                Prev
-              </button>
-              <button type="button" onClick={() => setIndex(nextIndex)}>
-                Next
-              </button>
+              <Link to={`/games/${uid}`}>
+                <Button first>Learn More</Button>
+              </Link>
+
+              <Link to="/games/">
+                <Button last ghosted>
+                  All Games
+                </Button>
+              </Link>
             </div>
           </div>
         </WIREFRAME.FeaturedText>
@@ -103,7 +110,15 @@ const Careers: React.FC = () => {
             ))}
           </div>
         </WIREFRAME.Featured>
-        <Link to="/careers">See all careers</Link>
+        <Section>
+          <Wrap>
+            <Link to="/careers">
+              <Button first last ghosted>
+                See all careers
+              </Button>
+            </Link>
+          </Wrap>
+        </Section>
       </Section>
     </>
   )
