@@ -2,7 +2,7 @@
 /* eslint-disable react/no-danger */
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from 'components/Layout'
+import { Layout, AppFrame } from 'components'
 import { Section, Wrap, TextWrap } from 'components/UI'
 
 const Game: React.FC<IProps> = ({ data }) => {
@@ -47,7 +47,9 @@ const Game: React.FC<IProps> = ({ data }) => {
         </Section>
         <Section>
           {screenshotUrls.map(url => (
-            <img src={url} alt="" key={url} width="100px" />
+            <AppFrame key={url}>
+              <img src={url} alt="" />
+            </AppFrame>
           ))}
         </Section>
       </Wrap>
