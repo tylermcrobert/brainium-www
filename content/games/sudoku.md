@@ -4,6 +4,7 @@ uid: sudoku
 itunesLink: https://itunes.apple.com/us/app/sudoku/id418044512?mt=8
 appStoreId: 418044512
 googlePlayLink: https://play.google.com/store/apps/details?id=com.brainium.sudoku.free
+summary: Nam in eos duo veniam intellegebat his ex in est similique similique sadipscing.
 ---
 
 Brainium spent many months carefully crafting the ultimate version of the puzzle game Sudoku. The result is a elegant, modern interface that is as easy to use as it is beautiful.

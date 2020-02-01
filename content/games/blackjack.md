@@ -4,6 +4,7 @@ uid: blackjack
 itunesLink: https://itunes.apple.com/us/app/blackjack/id703099994?mt=8
 appStoreId: 703099994
 googlePlayLink: https://play.google.com/store/apps/details?id=com.brainium.blackjack
+summary: Phasellus feugiat libero sit amet nisi semper, eget tempor neque.
 ---
 
 Blackjack by Brainium captures the exhilaration of the original game while making the digital experience effortless and beautiful to look at. Best of all, it's completely free. There are NO in-app purchases for getting chips in our game! (All the chips and money in our game are fictitious.)

@@ -4,6 +4,7 @@ uid: solitaire
 itunesLink: https://apps.apple.com/us/app/solitaire/id479280326
 appStoreId: 479280326
 googlePlayLink: https://play.google.com/store/apps/details?id=com.brainium.solitairefree&hl=en
+summary: Ex illud contentiones at eruditi debet vim an prodesset doctus sea.
 ---
 
 Brainium spent many months thoughtfully crafting the perfect version of the classic card game Solitaire (also known as Klondike.) The result is a sleek, modern game that is as intuitive as it is beautiful.

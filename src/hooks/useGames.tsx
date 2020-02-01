@@ -9,6 +9,7 @@ const GAME_QUERY = graphql`
             frontmatter {
               title
               uid
+              summary
             }
           }
         }
@@ -25,6 +26,7 @@ type GameQuery = {
           frontmatter: {
             title: string
             uid: string
+            summary?: string
           }
         }
       }

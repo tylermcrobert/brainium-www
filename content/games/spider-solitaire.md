@@ -4,6 +4,7 @@ uid: spider-solitaire
 itunesLink: https://apps.apple.com/us/app/spider-solitaire/id487025819
 appStoreId: 487025819
 googlePlayLink: https://play.google.com/store/apps/details?id=com.brainium.spiderfree&hl=en
+summary: Eos fastidii debet alia vel iriure nec tempor qui paulo lorem facilis quot nibh natum.
 ---
 
 Spider Solitaire by Brainium takes the classic spirit of the game and encapsulates it inside a modern, fresh interface. The clear, easy-to-read cards, subtle animations and sound effects enhance the playing experience, making it effortless and delightful.

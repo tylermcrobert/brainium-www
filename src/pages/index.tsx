@@ -29,7 +29,7 @@ const Intro: React.FC = () => {
  * Games
  */
 
-const GAMES = ['solitaire', 'ilu']
+const GAMES = ['solitaire', 'sudoku', 'spider-solitaire', 'freecell']
 
 const Featured: React.FC = () => {
   const [index, setIndex] = useState(0)
@@ -39,18 +39,29 @@ const Featured: React.FC = () => {
   const prevIndex = (index - 1 + length) % length
 
   const games = useGames()
-  const { title } = games.filter(game => game.uid === GAMES[index])[0]
+  const gameData = games.filter(game => game.uid === GAMES[index])[0]
+  const { title, uid, summary } = gameData
 
   return (
     <div>
-      <h5>Featured games</h5>
-      <h2>{title}</h2>
-      <button type="button" onClick={() => setIndex(prevIndex)}>
-        Prev
-      </button>
-      <button type="button" onClick={() => setIndex(nextIndex)}>
-        Next
-      </button>
+      <div>
+        <h5>Featured games</h5>
+        <h2>{title}</h2>
+        {index + 1} / {length}
+      </div>
+      <p>{summary}</p>
+      <div>
+        <button type="button" onClick={() => setIndex(prevIndex)}>
+          Prev
+        </button>
+        <button type="button" onClick={() => setIndex(nextIndex)}>
+          Next
+        </button>
+      </div>
+      <div>
+        <Link to={`/games/${uid}`}>Learn More</Link>
+        <Link to="/games/">All Games</Link>
+      </div>
     </div>
   )
 }

@@ -2,8 +2,6 @@ import React from 'react'
 import Layout from 'components/Layout'
 import styled from 'styled-components'
 
-const FPO_IMG =
-  'https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80'
 const About: React.FC = () => {
   return (
     <Layout title="About">
