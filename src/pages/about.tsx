@@ -1,197 +1,94 @@
 import React from 'react'
-import { Layout } from 'components'
-import styled from 'styled-components'
+import { Layout, TextWrap, Wrap, Section } from 'components'
+import { Link } from 'gatsby'
 
 const About: React.FC = () => {
   return (
     <Layout title="About">
-      <Intro>
-        <Cap>About Brainium</Cap>
-        <h2>We&apos;re a team of hard working dedicated people.</h2>
-        <p>
-          Phasellus tellus nisi, feugiat sed maximus vitae, venenatis vitae
-          nunc. Ut molestie ex sapien, a vestibulum ipsum mattis et. Integer
-          pretium, nisl in dapibus pharetra, sem sapien tempus est, ac fermentum
-          felis quam et odio. Proin tincidunt
-        </p>
-      </Intro>
-      <img
-        src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80"
-        alt=""
-        width="100%"
-      />
-      <Container>
-        <h2>Brainium keeps the world entertained.</h2>
-        <p>
-          Phasellus tristique dui a tempor vulputate. Integer et posuere massa.
-          Praesent lobortis justo tellus, nec blandit eros finibus ut. Nulla
-          facilisi. Integer quis massa vel nisl congue posuere. Aliquam pretium
-          laoreet blandit. Nullam sem enim, pretium at turpis a, iaculis
-          malesuada sapien.
-        </p>
-      </Container>
-      <Stats>
-        <Stat>2012</Stat>
-        Brainium launched
-        <Stat>2,000,000+</Stat>
-        App Downloads
-        <Stat>2,000+</Stat>
-        Five-star reviews
-      </Stats>
-      <img
-        src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80"
-        alt=""
-        width="100%"
-      />
-      <Container>
-        <Cap>Careers</Cap>
-        <h2>Get a job working at the best game company around.</h2>
-        <p>
-          From day one, we’ve been committed to making Instrument a place where
-          people can make the best work of their career — sustainably. This
-          means working reasonable hours. Spending each day in a welcoming.
-        </p>
-      </Container>
-
-      <ValueProp>
-        <div>
-          <h3>We give you good benefits.</h3>
-          <p>
-            Phasellus tristique dui a tempor vulputate. Integer et posuere
-            massa. Praesent lobortis justo tellus, nec blandit eros finibus ut.
-            Nulla facilisi.
-            <ul>
-              <li>nteger quis massa vel nisl congue posuere.</li>
-              <li> Aliquam pretium laoreet blandit.</li>
-              <li>Nullam sem enim, pretium at turpis a.</li>
-              <li>Iculis malesuada sapien.</li>
-            </ul>
-          </p>
-        </div>
-        <img
-          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80"
-          alt=""
-          width="100%"
-        />
-      </ValueProp>
-
-      <ValueProp inverted>
-        <div>
-          <h3>Work alongside the best minds in gaming.</h3>
-          <p>
-            Phasellus tristique dui a tempor vulputate. Integer et posuere
-            massa. Praesent lobortis justo tellus, nec blandit eros finibus ut.
-            Nulla facilisi.
-            <ul>
-              <li>nteger quis massa vel nisl congue posuere.</li>
-              <li> Aliquam pretium laoreet blandit.</li>
-              <li>Nullam sem enim, pretium at turpis a.</li>
-              <li>Iculis malesuada sapien.</li>
-            </ul>
-          </p>
-        </div>
-        <img
-          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80"
-          alt=""
-          width="100%"
-        />
-      </ValueProp>
-
-      <ValueProp>
-        <div>
-          <h3>Work culture matters to us.</h3>
-          <p>
-            Phasellus tristique dui a tempor vulputate. Integer et posuere
-            massa. Praesent lobortis justo tellus, nec blandit eros finibus ut.
-            Nulla facilisi.
-            <ul>
-              <li>nteger quis massa vel nisl congue posuere.</li>
-              <li> Aliquam pretium laoreet blandit.</li>
-              <li>Nullam sem enim, pretium at turpis a.</li>
-              <li>Iculis malesuada sapien.</li>
-            </ul>
-          </p>
-        </div>
-        <img
-          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80"
-          alt=""
-          width="100%"
-        />
-      </ValueProp>
-      <Highlight>
-        <Container>
-          <Cap>Careers</Cap>
-          <h2>Let&apos;s build the future of gaming</h2>
-          <button type="button">See Open Positions</button>
-        </Container>
-      </Highlight>
+      <Intro />
+      <Impact />
+      <Career />
     </Layout>
   )
 }
 
-const Highlight = styled.div`
-  background: ${props => props.theme.colors.brand.secondary};
-  padding: 4rem;
-  text-align: center;
-  color: white;
-`
+/**
+ * Intro
+ */
 
-const ValueProp = styled.div<{ inverted?: boolean }>`
-  max-width: 60rem;
-  display: flex;
-  grid-gap: 1rem;
-  margin: 1rem;
-  margin: 5rem auto;
-  flex-direction: ${props => (props.inverted ? 'row-reverse' : 'row')};
-  align-items: center;
+const Intro: React.FC = () => (
+  <>
+    <Section>
+      <TextWrap center>
+        <h1>deterruisset usu vis scripserit</h1>
+        <p>
+          Ponderum melius sale et iuvaret et usu simul nusquam inani ex eum cibo
+          veritus audiam pro.
+        </p>
+      </TextWrap>
+    </Section>
+    <Section>
+      <img src="https://via.placeholder.com/1440x800" alt="" width="100%" />
+    </Section>
+  </>
+)
 
-  img {
-    width: 66%;
-    align-self: center;
-  }
+/**
+ * Impact
+ */
 
-  > * {
-    margin: 0 1rem;
-  }
+const STATS: { head: string; body: string }[] = [
+  { head: '200k+', body: 'Game Downloads' },
+  { head: '50k+', body: '5-Star Ratings' },
+  { head: '20+', body: 'Funny stat' },
+]
 
-  p {
-    font-size: 0.9rem;
-  }
-`
+const Impact: React.FC = () => (
+  <div>
+    <Section>
+      <TextWrap center>
+        <h5>Brainium’s Impact</h5>
+        <h2>Copy that sets up Brainium’s success in the market</h2>
+        <p>
+          Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
+          Fusce lacinia est est, eget eleifend sem venenatis eu. Curabitur quis
+          quam nulla. Aenean ullamcorper odio sit amet ipsum aliquet facilisis.
+          Sed in sapien in ex pharetra tempus. Nulla scelerisque
+        </p>
+      </TextWrap>
+    </Section>
+    <Section>
+      <Wrap>
+        {STATS.map(({ head, body }) => (
+          <div>
+            <h1>{head}</h1>
+            <p>{body}</p>
+          </div>
+        ))}
+      </Wrap>
+    </Section>
+  </div>
+)
 
-const Cap = styled.span`
-  font-size: 0.7rem;
-  text-transform: uppercase;
-`
+/**
+ * Career
+ */
 
-const Stats = styled.div`
-  text-align: center;
-  margin: 4rem auto;
-`
-
-const Stat = styled.h3`
-  font-size: 3rem;
-  margin: 0 auto;
-  margin-top: 1rem;
-`
-
-const Container = styled.div`
-  max-width: 30rem;
-  margin: 3rem auto;
-`
-
-const Intro = styled.div`
-  max-width: 30rem;
-  text-align: center;
-  margin: 5rem auto;
-
-  h1 {
-    font-size: 1rem;
-  }
-  h2 {
-    max-width: 20rem;
-    margin: 0 auto;
-  }
-`
+const Career: React.FC = () => (
+  <div>
+    <img src="https://via.placeholder.com/960x720" width="100%" alt="" />
+    <Section>
+      <TextWrap center>
+        <h5>Working Here</h5>
+        <h2>Copy that inspires new talent to work at Brainium</h2>
+        <p>
+          Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
+          Fusce lacinia est est, eget eleifend sem venenatis eu.
+        </p>
+        <Link to="/careers">Careers</Link>
+      </TextWrap>
+    </Section>
+  </div>
+)
 
 export default About
