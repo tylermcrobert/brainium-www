@@ -23,6 +23,10 @@ declare module 'styled-components' {
       error: string
     }
 
+    margins: {
+      standard: string
+    }
+
     sizes: Sizes
   }
 }

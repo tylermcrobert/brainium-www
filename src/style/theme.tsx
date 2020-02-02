@@ -32,6 +32,11 @@ const theme: DefaultTheme = {
   fontFamilies: {
     sansSerif: `CircularStd`,
   },
+
+  margins: {
+    standard: '1rem',
+  },
+
   sizes: {
     xl: 1900,
     lg: 1440,

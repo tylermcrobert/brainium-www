@@ -1,28 +1,51 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Layout, Wrap, Section } from 'components'
+import { Layout, Wrap, Section, TextWrap } from 'components'
 import useGames from 'hooks/useGames'
+import WIREFRAME from './Wireframe'
 
 const Games = () => {
-  const games = useGames()
-
   return (
     <Layout title="Games">
       <Wrap>
+        <Intro />
         <Section>
-          <h1>Games</h1>
-          <ul>
-            {games.map(({ title, uid }) => (
-              <li>
-                <h2>
-                  <Link to={`/games/${uid}`}>{title}</Link>
-                </h2>
-              </li>
-            ))}
-          </ul>
+          <GameList />
         </Section>
       </Wrap>
     </Layout>
+  )
+}
+
+const Intro = () => {
+  return (
+    <Section>
+      <TextWrap center>
+        <h5>Games</h5>
+        <h1>We love making games because we love playing games.</h1>
+        <p>
+          Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
+          Fusce lacinia est est, eget eleifend sem venenatis eu. learn more
+          about why we make games
+        </p>
+      </TextWrap>
+    </Section>
+  )
+}
+const GameList = () => {
+  const games = useGames()
+  return (
+    <Section>
+      <WIREFRAME.GamesWrapper>
+        {games.map(({ title, uid }) => (
+          <Link to={`/games/${uid}`} key={uid}>
+            <WIREFRAME.Game>
+              <h2>{title}</h2>
+            </WIREFRAME.Game>
+          </Link>
+        ))}
+      </WIREFRAME.GamesWrapper>
+    </Section>
   )
 }
 
