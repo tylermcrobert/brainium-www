@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { DefaultTheme } from 'styled-components'
 
 const scale: number[] = [

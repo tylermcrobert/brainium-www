@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components'
+import reset from 'styled-reset'
 
 const GLOBAL = css`
   * {
@@ -38,6 +39,7 @@ const GLOBAL = css`
 `
 
 const GlobalStyle = createGlobalStyle`
+  ${reset}
   ${GLOBAL}
 `
 
