@@ -1,6 +1,13 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { Layout, Wrap, Section, TextWrap } from 'components'
+import {
+  Layout,
+  Wrap,
+  Section,
+  TextWrap,
+  PageTitle,
+  PageIntro,
+} from 'components'
 import useCareers from 'hooks/useCareers'
 import WIREFRAME from './Wireframe'
 
@@ -23,11 +30,8 @@ const Intro: React.FC = () => (
     <Section>
       <Wrap>
         <TextWrap center>
-          <h5>Careers</h5>
-          <h1>
-            Inspiring copy about <br />
-            working at brainium
-          </h1>
+          <PageTitle>Careers</PageTitle>
+          <PageIntro>Inspiring copy about working at brainium</PageIntro>
           <p>
             Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
             Fusce lacinia est est, eget eleifend sem venenatis eu. Curabitur

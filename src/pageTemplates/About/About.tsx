@@ -1,5 +1,12 @@
 import React from 'react'
-import { Layout, TextWrap, Wrap, Section } from 'components'
+import {
+  Layout,
+  TextWrap,
+  Wrap,
+  Section,
+  PageTitle,
+  PageIntro,
+} from 'components'
 import { Link } from 'gatsby'
 import WIREFRAME from './Wireframe'
 
@@ -22,8 +29,10 @@ const Intro: React.FC = () => (
     <Section>
       <Wrap>
         <TextWrap center>
-          <h5>About</h5>
-          <h1>deterruisset usu vis scripserit</h1>
+          <PageTitle>About</PageTitle>
+          <PageIntro>
+            deterruisset usu <br /> vis scripserit
+          </PageIntro>
           <p>
             Ponderum melius sale et iuvaret et usu simul nusquam inani ex eum
             cibo veritus audiam pro.

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, Wrap, Section, TextWrap, Button } from 'components'
+import { Layout, Wrap, Section, TextWrap, Button, PageIntro } from 'components'
 import useCareers from 'hooks/useCareers'
 import useGames from 'hooks/useGames'
 import { Link } from 'gatsby'
@@ -25,7 +25,7 @@ const Intro: React.FC = () => {
     <>
       <Section>
         <Wrap>
-          <h1>Brainium studios is lorem ipsum dolor</h1>
+          <PageIntro>Brainium studios is lorem ipsum dolor</PageIntro>
           <p>lorem ipsum dolor sit amet consecutor</p>
         </Wrap>
       </Section>

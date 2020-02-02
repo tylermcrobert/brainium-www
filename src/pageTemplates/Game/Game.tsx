@@ -1,6 +1,14 @@
 /* eslint-disable react/no-danger */
 import React from 'react'
-import { Layout, AppFrame, Section, Wrap, TextWrap } from 'components'
+import {
+  Layout,
+  AppFrame,
+  Section,
+  Wrap,
+  TextWrap,
+  PageIntro,
+  PageTitle,
+} from 'components'
 // eslint-disable-next-line no-unused-vars
 import { IProps } from 'templates/game'
 import WIREFRAME from './Wireframe'
@@ -43,8 +51,8 @@ const Intro: React.FC<IIntroProps> = ({ title }) => {
       <Section>
         <Wrap>
           <TextWrap center>
-            <h5>{title}</h5>
-            <h1>The classsic card game at its absolute best</h1>
+            <PageTitle>{title}</PageTitle>
+            <PageIntro>The classsic card game at its absolute best</PageIntro>
             <p>
               Duis tincidunt arcu in leo fringilla, ac consequat diam venenatis.
               Fusce lacinia est est, eget eleifend sem venenatis eu. Curabitur
