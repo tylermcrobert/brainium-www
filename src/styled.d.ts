@@ -7,6 +7,7 @@ export type Sizes = {
 }
 
 declare module 'styled-components' {
+  // eslint-disable-next-line @typescript-eslint/interface-name-prefix
   export interface DefaultTheme {
     scale: number[]
     remScale: string[]
